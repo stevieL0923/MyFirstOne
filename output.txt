@@ -1,0 +1,116 @@
+Script started on 2024-02-10 03:26:39+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="110" LINES="24"]
+]0;stevenleertx@ip-172-31-43-36: ~/myRepo/MyFirstOne[01;32mstevenleertx@ip-172-31-43-36[00m:[01;34m~/myRepo/MyFirstOne[00m$ mysql[K[K[K[K[Ksudo mysql -u root
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.36-0ubuntu0.20.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> source myDb.sql
+Query OK, 1 row affected (0.01 sec)
+
+Database changed
+Empty set (0.00 sec)
+
+Query OK, 0 rows affected (0.06 sec)
+
++---------+--------------+------+-----+---------+----------------+
+| Field   | Type         | Null | Key | Default | Extra          |
++---------+--------------+------+-----+---------+----------------+
+| cid     | int          | NO   | PRI | NULL    | auto_increment |
+| name    | varchar(256) | YES  |     | NULL    |                |
+| address | varchar(256) | YES  |     | NULL    |                |
+| city    | varchar(256) | YES  |     | NULL    |                |
+| state   | varchar(2)   | YES  |     | NULL    |                |
+| zipCode | varchar(5)   | YES  |     | NULL    |                |
++---------+--------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
++-----+--------------------+--------------------+------------------+-------+---------+
+| cid | name               | address            | city             | state | zipCode |
++-----+--------------------+--------------------+------------------+-------+---------+
+|   1 | Lennar Development | 1221 Poway Ave.    | Poway            | CA    | 92128   |
+|   2 | K&B Homes          | 900 Carmel Mtn     | Rancho Bernardo  | CA    | 92127   |
+|   3 | Shea Homes         | 456 Black Mountain | Racho Penaquitos | CA    | 92120   |
++-----+--------------------+--------------------+------------------+-------+---------+
+3 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.04 sec)
+
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| mid       | int          | NO   | PRI | NULL    | auto_increment |
+| date      | date         | YES  |     | NULL    |                |
+| startTime | time         | YES  |     | NULL    |                |
+| endTime   | time         | YES  |     | NULL    |                |
+| purpose   | varchar(256) | YES  |     | NULL    |                |
+| cid       | int          | YES  | MUL | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
++-----+------------+-----------+----------+----------------------+------+
+| mid | date       | startTime | endTime  | purpose              | cid  |
++-----+------------+-----------+----------+----------------------+------+
+|   1 | 2024-02-05 | 09:00:00  | 10:00:00 | New Customer Mtg     |    1 |
+|   2 | 2024-02-05 | 10:00:00  | 11:00:00 | Finalize Sales       |    2 |
+|   3 | 2024-03-05 | 09:00:00  | 10:00:00 | Plan New Development |    1 |
++-----+------------+-----------+----------+----------------------+------+
+3 rows in set (0.00 sec)
+
++--------------------+------------+-----------+----------+----------------------+
+| name               | date       | startTime | endTime  | purpose              |
++--------------------+------------+-----------+----------+----------------------+
+| Lennar Development | 2024-02-05 | 09:00:00  | 10:00:00 | New Customer Mtg     |
+| K&B Homes          | 2024-02-05 | 10:00:00  | 11:00:00 | Finalize Sales       |
+| Lennar Development | 2024-03-05 | 09:00:00  | 10:00:00 | Plan New Development |
++--------------------+------------+-----------+----------+----------------------+
+3 rows in set (0.00 sec)
+
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
++--------------------+------------+-----------+----------+----------------------+
+| name               | date       | startTime | endTime  | purpose              |
++--------------------+------------+-----------+----------+----------------------+
+| Lennar Development | 2024-02-05 | 09:00:00  | 10:00:00 | New Customer Mtg     |
+| K&B Homes          | 2024-02-06 | 09:00:00  | 10:00:00 | Finalize Sales       |
+| Lennar Development | 2024-03-05 | 09:00:00  | 10:00:00 | Plan New Development |
++--------------------+------------+-----------+----------+----------------------+
+3 rows in set (0.00 sec)
+
+Query OK, 1 row affected (0.01 sec)
+
++--------------------+------------+-----------+----------+------------------+
+| name               | date       | startTime | endTime  | purpose          |
++--------------------+------------+-----------+----------+------------------+
+| Lennar Development | 2024-02-05 | 09:00:00  | 10:00:00 | New Customer Mtg |
+| K&B Homes          | 2024-02-06 | 09:00:00  | 10:00:00 | Finalize Sales   |
++--------------------+------------+-----------+----------+------------------+
+2 rows in set (0.00 sec)
+
+Query OK, 2 rows affected (0.04 sec)
+
+mysql> exit
+Bye
+]0;stevenleertx@ip-172-31-43-36: ~/myRepo/MyFirstOne[01;32mstevenleertx@ip-172-31-43-36[00m:[01;34m~/myRepo/MyFirstOne[00m$ exit
+
+Script done on 2024-02-10 03:27:12+00:00 [COMMAND_EXIT_CODE="0"]
